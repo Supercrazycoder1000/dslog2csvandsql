@@ -1,4 +1,4 @@
-import pandas
+import pandas as pd
 import os
 import sys
 from sqlalchemy import create_engine
