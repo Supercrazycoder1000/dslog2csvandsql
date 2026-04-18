@@ -12,7 +12,7 @@ print("Script name:", sys.argv[0])
 print("Arguments:", sys.argv[1:])
 
 # Configuration
-AS_PATH = r"C:\Users\joshu\AppData\Local\Programs\advantagescope\AdvantageScope.exe" #change to your install of advantage scope
+AS_PATH = r"" #change to your install of Advantage Scope
 LOG_PATH = sys.argv[1]
 #print(LOG_PATH)
 def export_dslog(LOG_PATH):
