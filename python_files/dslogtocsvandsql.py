@@ -17,7 +17,7 @@ LOG_PATH = sys.argv[1]
 #print(LOG_PATH)
 def export_dslog(LOG_PATH):
     # 1. Configuration
-    #AS_PATH = r"C:\Users\joshu\AppData\Local\Programs\advantagescope\AdvantageScope.exe"
+    
     
     # Validation
     if not os.path.exists(AS_PATH):
