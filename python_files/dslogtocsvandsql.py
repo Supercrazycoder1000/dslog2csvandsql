@@ -6,13 +6,32 @@ import sys
 import os
 import pandas as pd
 from sqlalchemy import create_engine
+import platform
 
 print("Total arguments:", len(sys.argv))
 print("Script name:", sys.argv[0])
 print("Arguments:", sys.argv[1:])
 
 # Configuration
-AS_PATH = r"ADVANTAGE_SCOPE_PATH_HERE" #change to your install of Advantage Scope
+def get_as_path():
+    # Gets the home directory (e.g., C:\Users\Joshua or /Users/joshua)
+    home = os.path.expanduser("~")
+    system = platform.system()
+
+    if system == "Windows":
+        # AdvantageScope usually installs in Local AppData
+        # Using environment variables is even safer on Windows
+        local_app_data = os.environ.get('LOCALAPPDATA', os.path.join(home, 'AppData', 'Local'))
+        return os.path.join(local_app_data, r"Programs\AdvantageScope\AdvantageScope.exe")
+    
+    elif system == "Darwin": # macOS
+        return "/Applications/AdvantageScope.app/Contents/MacOS/AdvantageScope"
+    
+    else: # Linux
+        return "/usr/bin/advantagescope"
+
+AS_PATH = get_as_path()
+print(f"Detected AdvantageScope path: {AS_PATH}")
 LOG_PATH = sys.argv[1]
 #print(LOG_PATH)
 def export_dslog(LOG_PATH):
