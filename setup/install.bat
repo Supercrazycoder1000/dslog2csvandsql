@@ -24,7 +24,7 @@ echo [Step 2/3] Installing Python dependencies...
 :: First, ensure pip is up to date
 python -m pip install --upgrade pip >nul
 :: Install requirements (using the list we discussed)
-pip install pandas sqlalchemy pyautogui pydirectinput requests
+pip install -r requirements.txt
 if %errorlevel% neq 0 (
     echo [WARNING] Some libraries failed to install. Check your internet connection.
 )
