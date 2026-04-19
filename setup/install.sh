@@ -8,7 +8,7 @@ echo "Detected OS: $OS_TYPE ($ARCH_TYPE)"
 
 # --- 2. Install Python Dependencies ---
 echo "Installing Python libraries..."
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 
 # --- 3. AdvantageScope Auto-Install ---
 REPO="Mechanical-Advantage/AdvantageScope"
